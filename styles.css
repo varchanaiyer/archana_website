@@ -680,6 +680,98 @@ img {
 }
 
 /* ===========================
+   BLOG SECTION
+   =========================== */
+.blog-section {
+  padding: 6rem 3rem;
+  background: #faf5ef;
+  border-top: 4px solid #f8d4e3;
+}
+
+.blog-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.blog-title {
+  text-align: left;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.blog-item {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 0.5rem 0;
+  transition: transform 0.3s ease;
+}
+
+.blog-item:hover {
+  transform: translateX(6px);
+}
+
+.blog-item:hover .blog-heading {
+  color: var(--color-dark);
+}
+
+.blog-thumb {
+  flex-shrink: 0;
+  width: 220px;
+  height: 140px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.blog-thumb-1 {
+  background: linear-gradient(135deg, #1a2332 0%, #2d3f52 50%, #4a6078 100%);
+}
+
+.blog-thumb-2 {
+  background: linear-gradient(135deg, #c88a6a 0%, #7ba89c 60%, #3f7e70 100%);
+}
+
+.blog-thumb-3 {
+  background: linear-gradient(135deg, #c9b89a 0%, #8a7a65 100%);
+}
+
+.blog-thumb-4 {
+  background: linear-gradient(135deg, #e8a85b 0%, #d85fa0 60%, #5aa0c0 100%);
+}
+
+.blog-thumb-5 {
+  background: linear-gradient(135deg, #3a3028 0%, #8a6a50 100%);
+}
+
+.blog-content {
+  flex: 1;
+}
+
+.blog-date {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: #a8a39c;
+  margin-bottom: 0.6rem;
+}
+
+.blog-heading {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #8a847c;
+  line-height: 1.35;
+  transition: color 0.3s ease;
+}
+
+/* ===========================
    TESTIMONIALS
    =========================== */
 .testimonials-section {
@@ -845,6 +937,21 @@ img {
   .awards-grid,
   .speaking-grid {
     grid-template-columns: 1fr;
+  }
+  .blog-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .blog-thumb {
+    width: 100%;
+    height: 180px;
+  }
+  .blog-title {
+    font-size: 2.2rem;
+  }
+  .blog-heading {
+    font-size: 1.2rem;
   }
   .experience-row {
     flex-direction: column;
