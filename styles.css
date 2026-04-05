@@ -688,6 +688,20 @@ img {
   border-top: 4px solid #f8d4e3;
 }
 
+.blog-section.blog-page {
+  padding-top: 10rem;
+  min-height: 100vh;
+}
+
+.blog-intro {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #888;
+  max-width: 600px;
+  margin: -2rem 0 3rem;
+}
+
 .blog-inner {
   max-width: 1000px;
   margin: 0 auto;
