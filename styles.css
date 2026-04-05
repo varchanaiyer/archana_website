@@ -8,8 +8,9 @@
 }
 
 :root {
-  --font-serif: 'DM Serif Display', Georgia, serif;
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Recoleta', Georgia, serif;
+  --font-sans: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --color-dark: #1a1a1a;
   --color-text: #555;
   --color-light: #f5f0eb;
@@ -90,6 +91,7 @@ img {
 }
 
 .nav-cta {
+  font-family: var(--font-ui);
   font-size: 0.85rem;
   font-weight: 600;
   padding: 0.6rem 1.5rem;
@@ -317,6 +319,7 @@ img {
 .award-card p {
   font-family: var(--font-sans);
   font-size: 0.95rem;
+  font-weight: 400;
   line-height: 1.6;
   color: #888;
   margin-bottom: 1.5rem;
@@ -330,6 +333,7 @@ img {
   background: var(--color-dark);
   color: var(--color-white);
   border-radius: 8px;
+  font-family: var(--font-ui);
   font-size: 0.8rem;
   font-weight: 600;
   transition: all 0.3s;
