@@ -28,9 +28,19 @@
   <!-- ========== BLOG ========== -->
   <section id="blog" class="blog-section blog-page">
     <div class="blog-inner">
+
+      <!-- Category tabs -->
+      <div class="blog-tabs">
+        <button class="blog-tab active" data-category="community">Community Experience</button>
+        <button class="blog-tab" data-category="technical">Technical Blogs</button>
+        <button class="blog-tab" data-category="product">Product Marketing</button>
+        <button class="blog-tab" data-category="personal">Personal Experiences</button>
+      </div>
+
       <h1 class="section-title blog-title">Blog</h1>
-      <p class="blog-intro">Essays on AI, community building, and navigating tech as a woman of color.</p>
-      <div class="blog-list">
+
+      <!-- COMMUNITY EXPERIENCE -->
+      <div class="blog-list blog-category" data-category="community">
         <a href="https://www.varchana.com/blog/inside-the-first-ai-policy-hackathon-at-johns-hopkins" target="_blank" rel="noopener" class="blog-item">
           <div class="blog-thumb blog-thumb-1"></div>
           <div class="blog-content">
@@ -52,11 +62,11 @@
             <h3 class="blog-heading">How Does Techbro Culture Contribute to the Widening Gap in the Tech Industry</h3>
           </div>
         </a>
-        <a href="https://www.varchana.com/blog/creating-accessible-websites-a-guide-for-designers" target="_blank" rel="noopener" class="blog-item">
+        <a href="https://www.varchana.com/blog/if-rihanna-can-make-a-comeback-why-cant-you" target="_blank" rel="noopener" class="blog-item">
           <div class="blog-thumb blog-thumb-4"></div>
           <div class="blog-content">
             <div class="blog-date">Mar 7, 2023</div>
-            <h3 class="blog-heading">Creating Accessible Websites: A Guide for Designers</h3>
+            <h3 class="blog-heading">If Rihanna can make a comeback, why can&rsquo;t you?</h3>
           </div>
         </a>
         <a href="https://www.varchana.com/blog/running-a-technical-community-during-a-pandemic" target="_blank" rel="noopener" class="blog-item">
@@ -67,6 +77,104 @@
           </div>
         </a>
       </div>
+
+      <!-- TECHNICAL BLOGS -->
+      <div class="blog-list blog-category" data-category="technical" hidden>
+        <a href="#" class="blog-item">
+          <div class="blog-thumb blog-thumb-tech-1"></div>
+          <div class="blog-content">
+            <div class="blog-date">Mar 27, 2025</div>
+            <h3 class="blog-heading">The Quiet Revolution of Reasoning Models: How Machines Learned to Think</h3>
+          </div>
+        </a>
+        <a href="#" class="blog-item">
+          <div class="blog-thumb blog-thumb-tech-2"></div>
+          <div class="blog-content">
+            <div class="blog-date">Feb 20, 2025</div>
+            <h3 class="blog-heading">The Agentic AI Future: Understanding AI Agents, Swarm Intelligence, and Multi-Agent Systems</h3>
+          </div>
+        </a>
+      </div>
+
+      <!-- PRODUCT MARKETING -->
+      <div class="blog-list blog-category" data-category="product" hidden>
+        <a href="#" class="blog-item">
+          <div class="blog-thumb blog-thumb-goodfire"></div>
+          <div class="blog-content">
+            <div class="blog-date">Dec 27, 2025</div>
+            <h3 class="blog-heading">Behind the Features: Goodfire&rsquo;s Interpretability Tools in Action</h3>
+          </div>
+        </a>
+        <a href="#" class="blog-item">
+          <div class="blog-thumb blog-thumb-graphlit"></div>
+          <div class="blog-content">
+            <div class="blog-date">Jun 23, 2024</div>
+            <h3 class="blog-heading">PDF Ingestion Using Graphlit</h3>
+          </div>
+        </a>
+        <a href="#" class="blog-item">
+          <div class="blog-thumb blog-thumb-graphlit"></div>
+          <div class="blog-content">
+            <div class="blog-date">Jun 23, 2024</div>
+            <h3 class="blog-heading">Evaluating Modern Web Scraping Techniques</h3>
+          </div>
+        </a>
+        <a href="#" class="blog-item">
+          <div class="blog-thumb blog-thumb-graphlit"></div>
+          <div class="blog-content">
+            <div class="blog-date">May 20, 2024</div>
+            <h3 class="blog-heading">Langchain vs Graphlit: Building a Q&amp;A System</h3>
+          </div>
+        </a>
+        <a href="#" class="blog-item">
+          <div class="blog-thumb blog-thumb-graphlit"></div>
+          <div class="blog-content">
+            <div class="blog-date">May 20, 2024</div>
+            <h3 class="blog-heading">A Deep Dive into LlamaIndex and Graphlit for Streamlined Development</h3>
+          </div>
+        </a>
+        <a href="#" class="blog-item">
+          <div class="blog-thumb blog-thumb-graphlit"></div>
+          <div class="blog-content">
+            <div class="blog-date">Apr 3, 2024</div>
+            <h3 class="blog-heading">Introduction to Knowledge Graphs</h3>
+          </div>
+        </a>
+        <a href="#" class="blog-item">
+          <div class="blog-thumb blog-thumb-graphlit"></div>
+          <div class="blog-content">
+            <div class="blog-date">Apr 3, 2024</div>
+            <h3 class="blog-heading">Analyzing GitHub Issues with Graphlit</h3>
+          </div>
+        </a>
+        <a href="#" class="blog-item">
+          <div class="blog-thumb blog-thumb-graphlit"></div>
+          <div class="blog-content">
+            <div class="blog-date">Apr 1, 2024</div>
+            <h3 class="blog-heading">Diving Into Open Source with Graphlit: A Beginner&rsquo;s Guide to Contributing and Collaborating</h3>
+          </div>
+        </a>
+        <a href="#" class="blog-item">
+          <div class="blog-thumb blog-thumb-graphlit"></div>
+          <div class="blog-content">
+            <div class="blog-date">Mar 22, 2024</div>
+            <h3 class="blog-heading">ETL for LLMs: Extracting Knowledge from Content</h3>
+          </div>
+        </a>
+        <a href="#" class="blog-item">
+          <div class="blog-thumb blog-thumb-graphlit"></div>
+          <div class="blog-content">
+            <div class="blog-date">Mar 20, 2024</div>
+            <h3 class="blog-heading">The Value of Unstructured Data for LLMs</h3>
+          </div>
+        </a>
+      </div>
+
+      <!-- PERSONAL EXPERIENCES -->
+      <div class="blog-list blog-category" data-category="personal" hidden>
+        <div class="blog-empty">More personal stories coming soon.</div>
+      </div>
+
     </div>
   </section>
 
@@ -84,5 +192,25 @@
     </div>
   </footer>
 
+  <script>
+    // Blog category tab switching
+    (function () {
+      const tabs = document.querySelectorAll('.blog-tab');
+      const lists = document.querySelectorAll('.blog-category');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const cat = tab.dataset.category;
+          tabs.forEach(t => t.classList.toggle('active', t === tab));
+          lists.forEach(list => {
+            if (list.dataset.category === cat) {
+              list.removeAttribute('hidden');
+            } else {
+              list.setAttribute('hidden', '');
+            }
+          });
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
