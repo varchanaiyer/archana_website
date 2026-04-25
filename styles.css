@@ -955,6 +955,78 @@ img {
 }
 
 /* ===========================
+   COURSES PAGE (reuses .speaking-feature)
+   =========================== */
+.courses-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.courses-catalog-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 2.5rem;
+  background: linear-gradient(135deg, #1f1c18 0%, #3d3832 100%);
+  color: #faf5ef;
+  border-radius: 24px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.courses-catalog-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 50px -15px rgba(31, 28, 24, 0.35);
+}
+
+.courses-catalog-cta:hover .courses-catalog-cta-arrow {
+  transform: translateX(6px);
+}
+
+.courses-catalog-cta-text h3 {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+  color: #faf5ef;
+  letter-spacing: -0.01em;
+}
+
+.courses-catalog-cta-text p {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: rgba(250, 245, 239, 0.7);
+  max-width: 560px;
+}
+
+.courses-catalog-cta-arrow {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 700px) {
+  .courses-catalog-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.75rem;
+  }
+  .courses-catalog-cta-text h3 {
+    font-size: 1.3rem;
+  }
+  .courses-catalog-cta-arrow {
+    align-self: flex-end;
+    font-size: 2rem;
+  }
+}
+
+/* ===========================
    SPEAKING & OUTREACH (dedicated page)
    =========================== */
 .speaking-feature-section {
@@ -1064,8 +1136,8 @@ img {
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.1);
 }
 
-/* The connecting node on the rail */
-.speaking-feature::before {
+/* The connecting node on the rail (only inside the timeline) */
+.timeline .speaking-feature::before {
   content: '';
   position: absolute;
   left: -2.75rem;
@@ -1080,7 +1152,7 @@ img {
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.speaking-feature.in-view::before {
+.timeline .speaking-feature.in-view::before {
   background: var(--color-dark);
   transform: scale(1.15);
 }
@@ -1245,7 +1317,7 @@ img {
     transform: none !important;
     opacity: 1 !important;
   }
-  .speaking-feature::before {
+  .timeline .speaking-feature::before {
     left: -1.6rem;
     top: 1.75rem;
     width: 11px;
