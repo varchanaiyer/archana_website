@@ -121,9 +121,9 @@
   function initNavShadow() {
     const nav = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
-      nav.style.boxShadow = window.scrollY > 50
-        ? '0 2px 20px rgba(0,0,0,0.06)'
-        : 'none';
+      const scrolled = window.scrollY > 50;
+      nav.classList.toggle('scrolled', scrolled);
+      nav.style.boxShadow = scrolled ? '0 2px 20px rgba(0,0,0,0.06)' : 'none';
     }, { passive: true });
   }
 
