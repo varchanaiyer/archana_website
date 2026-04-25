@@ -2093,6 +2093,38 @@ a.speaking-testimonial-name:hover {
   font-style: italic;
 }
 
+/* --- Background art for the tech-bro essay (single piece, sits behind text) --- */
+.blog-post--techbro {
+  position: relative;
+  isolation: isolate;
+  background: #faf5ef;
+}
+
+.blog-post--techbro .blog-post-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('../../images/blog/tech-bros-blobs.svg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  opacity: 0.18;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Soft cream wash so the text panel reads cleanly over the art */
+.blog-post--techbro .blog-post-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(250, 245, 239, 0.0) 0%,
+    rgba(250, 245, 239, 0.55) 35%,
+    rgba(250, 245, 239, 0.92) 70%,
+    rgba(250, 245, 239, 1) 100%);
+  pointer-events: none;
+}
+
 /* --- Abstract figures (CSS-painted gradients used as inline blog art) --- */
 .post-abstract {
   margin: 3.5rem -4rem;
