@@ -1456,6 +1456,25 @@ a.speaking-testimonial-name:hover {
   background: #fafafa;
 }
 
+.courses-header {
+  max-width: 1100px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.courses-header .section-title {
+  margin-bottom: 1rem;
+}
+
+.courses-subtitle {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #6a645c;
+  max-width: 660px;
+  margin: 0 auto;
+}
+
 .courses-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -1465,6 +1484,7 @@ a.speaking-testimonial-name:hover {
 }
 
 .course-card {
+  position: relative;
   border-radius: var(--radius);
   overflow: hidden;
   background: var(--color-white);
@@ -1483,6 +1503,24 @@ a.speaking-testimonial-name:hover {
   object-fit: cover;
 }
 
+.course-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #faf5ef;
+  background: rgba(31, 28, 24, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0.35rem 0.65rem;
+  border-radius: 100px;
+  z-index: 2;
+}
+
 .course-card h4 {
   font-family: var(--font-sans);
   font-size: 0.9rem;
@@ -1495,6 +1533,26 @@ a.speaking-testimonial-name:hover {
   font-size: 0.8rem;
   color: var(--color-text);
   padding: 0 1rem 1rem;
+}
+
+.course-card--more {
+  background: linear-gradient(135deg, #faf5ef 0%, #f0e3cf 100%);
+  border: 1px dashed rgba(31, 28, 24, 0.18);
+  box-shadow: none;
+}
+
+.course-card--more:hover {
+  background: linear-gradient(135deg, #f5ede0 0%, #ebd9bf 100%);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.course-card--more h4 {
+  color: var(--color-dark);
+}
+
+.course-card--more p {
+  color: #6a645c;
+  font-weight: 500;
 }
 
 /* ===========================
