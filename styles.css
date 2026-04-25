@@ -706,6 +706,10 @@ img {
   background: linear-gradient(120deg, #e2d3ea 0%, #ddd0e8 35%, #d3d4dd 65%, #c4dccc 100%);
 }
 
+.speaking-feature--sky {
+  background: linear-gradient(125deg, #c5dff2 0%, #b8d8ec 50%, #aacfe5 100%);
+}
+
 .speaking-feature-text p a {
   color: #2a7fd0;
   text-decoration: underline;
