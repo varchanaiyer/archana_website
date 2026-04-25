@@ -674,6 +674,25 @@ img {
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.04);
 }
 
+.speaking-feature + .speaking-feature {
+  margin-top: 2.5rem;
+}
+
+.speaking-feature--lavender {
+  background: linear-gradient(115deg, #e6d8ed 0%, #dccfe5 35%, #c8d8ce 75%, #b8d3c0 100%);
+}
+
+.speaking-feature-text p a {
+  color: #2a7fd0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.speaking-feature-text p a:hover {
+  color: #1a5fa8;
+}
+
 .speaking-feature-text {
   display: flex;
   flex-direction: column;
