@@ -141,6 +141,44 @@
   }
 
   /* ===========================
+     SPEAKING FEATURE STACKING
+     Same effect as stack-cards but applied directly to .speaking-feature
+     (which IS the styled card — no inner wrapper).
+     =========================== */
+  const speakingCards = document.querySelectorAll('.speaking-feature');
+  const SPK_NUM = speakingCards.length;
+  const SPK_STICKY_TOPS = [90, 120, 150, 180];
+
+  function handleSpeakingStack() {
+    if (window.innerWidth <= 900) return; // mobile uses normal flow
+    speakingCards.forEach((card, i) => {
+      const rect = card.getBoundingClientRect();
+      const stickyTop = SPK_STICKY_TOPS[i] || SPK_STICKY_TOPS[SPK_STICKY_TOPS.length - 1];
+      const scrolledPast = stickyTop - rect.top;
+
+      if (scrolledPast > 0) {
+        const progress = Math.min(scrolledPast / COVER_DISTANCE, 1);
+        const cardsAbove = SPK_NUM - 1 - i;
+
+        if (cardsAbove <= 0) {
+          card.style.transform = '';
+          card.style.opacity = '';
+          return;
+        }
+
+        const scale = 1 - progress * SCALE_STEP * cardsAbove;
+        const opacity = 1 - progress * DIM_STEP * cardsAbove;
+
+        card.style.transform = `scale(${Math.max(scale, 0.86)})`;
+        card.style.opacity = `${Math.max(opacity, 0.55)}`;
+      } else {
+        card.style.transform = '';
+        card.style.opacity = '';
+      }
+    });
+  }
+
+  /* ===========================
      rAF THROTTLE
      =========================== */
   let ticking = false;
@@ -148,17 +186,23 @@
     if (!ticking) {
       requestAnimationFrame(() => {
         handleStackScroll();
+        handleSpeakingStack();
         ticking = false;
       });
       ticking = true;
     }
   }
 
+  function onResize() {
+    handleStackScroll();
+    handleSpeakingStack();
+  }
+
   /* ===========================
      INIT
      =========================== */
   window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', handleStackScroll, { passive: true });
+  window.addEventListener('resize', onResize, { passive: true });
 
   document.addEventListener('DOMContentLoaded', () => {
     initFadeAnimations();
@@ -166,5 +210,6 @@
     initNavShadow();
     initHeroParallax();
     handleStackScroll();
+    handleSpeakingStack();
   });
 })();
