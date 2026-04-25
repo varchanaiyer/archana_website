@@ -664,30 +664,112 @@ img {
   letter-spacing: -0.01em;
 }
 
+/* ---- Timeline structure ---- */
+.timeline-intro {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #6a645c;
+  max-width: 580px;
+  margin: -1.5rem 0 4rem;
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+/* The vertical rail running down the left */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 80px;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  background: linear-gradient(180deg,
+    #9bd9aa 0%,
+    #aacfe5 22%,
+    #c4dccc 42%,
+    #b5d3be 58%,
+    #d8d8b8 78%,
+    #c5e1c2 100%);
+  border-radius: 2px;
+  opacity: 0.55;
+}
+
+.timeline-group {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 2.5rem;
+  margin-bottom: 5rem;
+  position: relative;
+}
+
+.timeline-group:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-year {
+  font-family: var(--font-serif);
+  font-size: 3.4rem;
+  font-weight: 400;
+  color: var(--color-dark);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  position: sticky;
+  top: 110px;
+  align-self: start;
+  padding-top: 1.5rem;
+  text-align: right;
+  padding-right: 2.5rem;
+}
+
+.timeline-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+}
+
 .speaking-feature {
   display: grid;
   grid-template-columns: 1fr 1.05fr;
   gap: 3.5rem;
   background: linear-gradient(125deg, #f5f8f0 0%, #e3f0e1 55%, #c5e1c2 100%);
   border-radius: 32px;
-  padding: 3.5rem;
+  padding: 3rem 3rem 3rem 3.5rem;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
-  position: sticky;
-  margin-bottom: 18vh;
-  transform-origin: center top;
-  will-change: transform, opacity;
-  transition: box-shadow 0.3s ease;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.speaking-feature:nth-of-type(1) { top: 90px;  z-index: 1; }
-.speaking-feature:nth-of-type(2) { top: 120px; z-index: 2; }
-.speaking-feature:nth-of-type(3) { top: 150px; z-index: 3; }
-.speaking-feature:nth-of-type(4) { top: 180px; z-index: 4; }
-.speaking-feature:nth-of-type(5) { top: 210px; z-index: 5; }
-.speaking-feature:nth-of-type(6) { top: 240px; z-index: 6; }
+.speaking-feature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.1);
+}
 
-.speaking-feature:last-of-type {
-  margin-bottom: 4rem;
+/* The connecting node on the rail */
+.speaking-feature::before {
+  content: '';
+  position: absolute;
+  left: -2.75rem;
+  top: 3rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #faf5ef;
+  border: 3px solid var(--color-dark);
+  box-shadow: 0 0 0 4px #faf5ef;
+  z-index: 2;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.speaking-feature.in-view::before {
+  background: var(--color-dark);
+  transform: scale(1.15);
 }
 
 .speaking-feature--lavender {
@@ -815,21 +897,48 @@ img {
   }
   .speaking-feature-heading {
     font-size: 2.2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
+  }
+  .timeline-intro {
+    margin: 0 0 2.5rem;
+    font-size: 0.98rem;
+  }
+  /* Collapse rail to a thin left margin on mobile */
+  .timeline::before {
+    left: 12px;
+    opacity: 0.4;
+  }
+  .timeline-group {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+  }
+  .timeline-year {
+    font-size: 1.75rem;
+    position: static;
+    text-align: left;
+    padding: 0;
+    margin-bottom: 0.25rem;
+  }
+  .timeline-cards {
+    gap: 1.25rem;
   }
   .speaking-feature {
     grid-template-columns: 1fr;
     gap: 2rem;
     padding: 2rem;
     border-radius: 24px;
-    position: relative;
-    top: auto !important;
-    margin-bottom: 1.5rem;
     transform: none !important;
     opacity: 1 !important;
   }
-  .speaking-feature:last-of-type {
-    margin-bottom: 0;
+  .speaking-feature::before {
+    left: -1.6rem;
+    top: 1.75rem;
+    width: 11px;
+    height: 11px;
+    border-width: 2px;
+    box-shadow: 0 0 0 3px #faf5ef;
   }
   .speaking-feature-text {
     padding: 0;
