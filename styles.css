@@ -1851,11 +1851,11 @@ a.speaking-testimonial-name:hover {
 }
 
 .blog-thumb-techbro {
-  background:
-    radial-gradient(circle at 25% 32%, #ff8466 0%, transparent 45%),
-    radial-gradient(circle at 78% 70%, #c43d8a 0%, transparent 45%),
-    radial-gradient(circle at 55% 92%, #ffc066 0%, transparent 40%),
-    linear-gradient(135deg, #fdedd2 0%, #f3c590 60%, #e89c5f 100%);
+  background-image:
+    linear-gradient(135deg, rgba(250, 245, 239, 0.05), rgba(250, 245, 239, 0.2)),
+    url('../images/blog/tech-bros-blobs.svg');
+  background-size: cover;
+  background-position: center;
 }
 
 .blog-thumb-rihanna {
