@@ -692,6 +692,10 @@ img {
   background: linear-gradient(120deg, #dac8eb 0%, #ccbfdf 40%, #c2c8d2 70%, #b5d3be 100%);
 }
 
+.speaking-feature--peach {
+  background: linear-gradient(120deg, #fadbc1 0%, #f3d3b8 35%, #d8d8b8 70%, #c5dbb8 100%);
+}
+
 .speaking-feature-text p a {
   color: #2a7fd0;
   text-decoration: underline;
