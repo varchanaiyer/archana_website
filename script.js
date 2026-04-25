@@ -147,7 +147,7 @@
      =========================== */
   const speakingCards = document.querySelectorAll('.speaking-feature');
   const SPK_NUM = speakingCards.length;
-  const SPK_STICKY_TOPS = [90, 120, 150, 180];
+  const SPK_STICKY_TOPS = [90, 120, 150, 180, 210, 240];
 
   function handleSpeakingStack() {
     if (window.innerWidth <= 900) return; // mobile uses normal flow

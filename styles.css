@@ -683,6 +683,8 @@ img {
 .speaking-feature:nth-of-type(2) { top: 120px; z-index: 2; }
 .speaking-feature:nth-of-type(3) { top: 150px; z-index: 3; }
 .speaking-feature:nth-of-type(4) { top: 180px; z-index: 4; }
+.speaking-feature:nth-of-type(5) { top: 210px; z-index: 5; }
+.speaking-feature:nth-of-type(6) { top: 240px; z-index: 6; }
 
 .speaking-feature:last-of-type {
   margin-bottom: 4rem;
@@ -698,6 +700,10 @@ img {
 
 .speaking-feature--mint {
   background: linear-gradient(125deg, #b8edc7 0%, #aae3b8 50%, #9bd9aa 100%);
+}
+
+.speaking-feature--lilac {
+  background: linear-gradient(120deg, #e2d3ea 0%, #ddd0e8 35%, #d3d4dd 65%, #c4dccc 100%);
 }
 
 .speaking-feature-text p a {
