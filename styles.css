@@ -1754,7 +1754,9 @@ a.speaking-testimonial-name:hover {
 }
 
 .blog-thumb-goodfire {
-  background: linear-gradient(135deg, #a8c8e8 0%, #7ba8d8 60%, #4a78b0 100%);
+  background-image: url('images/blog/goodfire_interp/goodfire1.webp');
+  background-size: cover;
+  background-position: center;
 }
 
 .blog-thumb-graphlit {
