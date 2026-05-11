@@ -1804,6 +1804,10 @@ a.speaking-testimonial-name:hover {
   gap: 2.25rem;
 }
 
+.blog-list[hidden] {
+  display: none;
+}
+
 .blog-item {
   display: flex;
   align-items: center;
