@@ -1746,7 +1746,9 @@ a.speaking-testimonial-name:hover {
 
 /* Additional thumbnails for new categories */
 .blog-thumb-tech-1 {
-  background: linear-gradient(135deg, #0a1628 0%, #1a3050 40%, #2a4a78 100%);
+  background-image: url('images/blog/reasoning_models/reasoning_models1.avif');
+  background-size: cover;
+  background-position: center;
 }
 
 .blog-thumb-tech-2 {

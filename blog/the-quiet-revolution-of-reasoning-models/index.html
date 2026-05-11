@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Quiet Revolution of Reasoning Models | Archana Vaidheeswaran</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=recoleta@400,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar">
+    <div class="nav-links">
+      <a href="../../index.html#home">Home</a>
+      <a href="../../index.html#experience">Experience</a>
+      <a href="../../speaking/">Speaking</a>
+      <a href="../../courses/">Courses</a>
+      <a href="../" class="active">Blog</a>
+    </div>
+    <a href="../../index.html#contact" class="nav-cta">Get in Touch</a>
+  </nav>
+
+  <!-- ========== BLOG POST ========== -->
+  <article class="blog-post">
+
+    <!-- Hero / Header -->
+    <header class="post-hero">
+      <a href="../" class="post-back">&larr; Back to Blog</a>
+      <span class="post-eyebrow">Technical</span>
+      <h1 class="post-title">The Quiet Revolution of Reasoning Models</h1>
+      <p class="post-subtitle">How Large Language Models learned to think. What reasoning models are, how they got here, what they're actually good for, and how to prompt them well.</p>
+
+      <div class="post-byline">
+        <div class="post-byline-avatar" style="background-image: url('../../images/profile.avif');"></div>
+        <div class="post-byline-meta">
+          <strong>Archana Vaidheeswaran</strong>
+          <span>12 min read</span>
+        </div>
+        <div class="post-byline-sep"></div>
+        <div class="post-byline-meta">
+          <span>Mar 27, 2025</span>
+        </div>
+      </div>
+
+      <p class="post-original">Originally published on <a href="https://www.tribe.ai/applied-ai/the-quiet-revolution-of-reasoning-models-how-machines-learned-to-think" target="_blank" rel="noopener">Tribe AI's Applied AI blog</a>.</p>
+    </header>
+
+    <!-- Featured image -->
+    <div class="post-featured">
+      <img src="../../images/blog/reasoning_models/reasoning_models1.avif" alt="Reasoning models thinking step by step through complex problems" />
+    </div>
+
+    <!-- Body -->
+    <div class="post-body">
+      <p>Large Language Models have been around for many years now, but a new class of LLMs has emerged in the last year: <strong>reasoning LLMs</strong>.</p>
+
+      <p>These models represent a shift in how LLMs process information and solve problems. They're not simply retrieving facts or following patterns. They process complex problems step by step, building logical chains of thought before producing a final answer.</p>
+
+      <p>But what exactly are reasoning models? How do they differ from their predecessors? What kind of new products do they enable us to build? And how do we effectively prompt them?</p>
+
+      <h2>Learning to Reason</h2>
+
+      <p>The transition to reasoning models didn't happen overnight. LLM developers watched their customers reach for prompting techniques like Chain-of-Thought to coax reasoning and explainability out of base models. Then they started integrating that "thought" process into the model itself. That's the path that led us to today's powerful reasoning models.</p>
+
+      <h3>The Introduction of "Thought" in Language Models</h3>
+
+      <p>The key innovation that paved the way for reasoning models was introducing the concept of "thought" &mdash; a sequence of tokens representing intermediate steps in human-like reasoning. Rather than treating language generation as simple autoregressive token prediction, researchers began viewing it as a more sophisticated cognitive process that could incorporate deliberate, step-by-step reasoning.</p>
+
+      <p>By encouraging models to generate these intermediate "thoughts," researchers and LLM app builders discovered they could improve performance on complex tasks that required reasoning.</p>
+
+      <p>This approach aligns with what psychologists call <em>System 2</em> thinking, the slower, more deliberate cognitive process, as contrasted with the fast, intuitive <em>System 1</em> thinking that characterised earlier language models. The question became whether machines designed primarily for language prediction could engage in this more deliberate form of reasoning.</p>
+
+      <h3>Chain-of-Thought Prompting</h3>
+
+      <p>People discovered that prompting language models with instructions like <em>"Let's think step by step"</em> could bring out this System 2 style in LLMs. They also saw large improvements in reasoning task performance when LLMs thought step by step.</p>
+
+      <p>This approach came to be known as <strong>Chain-of-Thought (CoT) prompting</strong>. When asked to solve math problems, a benchmark for reasoning ability, models using CoT showed remarkable improvements in accuracy compared to standard approaches.</p>
+
+      <p>For example, when tasked with a problem like <em>"Beth bakes 4, two-dozen batches of cookies in a week. If these cookies are shared amongst 16 people equally, how many cookies does each person consume?"</em> a model using CoT would break it down:</p>
+
+      <ol>
+        <li>First, calculate the total number of cookies: 4 &times; 2 &times; 12 = 96</li>
+        <li>Then divide by the number of people: 96 &divide; 16 = 6</li>
+      </ol>
+
+      <p>This step-by-step approach mirrors how humans solve complex problems, and it dramatically improves performance on reasoning benchmarks. The simplicity of the solution showed that with just a slight nudge, language models could be coaxed into reasoning.</p>
+
+      <blockquote>Because we could elicit this reasoning behaviour even in a zero-shot setting, the capability had clearly been latent in the models all along. Further fine-tuning could enhance it.</blockquote>
+
+      <figure class="post-figure">
+        <img src="../../images/blog/reasoning_models/reasoning_models2.webp" alt="Visualisation of chain-of-thought reasoning compared to standard LLM output" />
+      </figure>
+
+      <h3>Training Data: From Human Annotation to Automated Generation</h3>
+
+      <p>One of the biggest challenges in developing reasoning models was the scarcity of training data. Initially, creating step-by-step reasoning examples required expensive human annotation. Experts would manually write out detailed reasoning paths, showing how to break down complex problems. This approach, while effective, simply couldn't scale to the massive datasets needed for robust training.</p>
+
+      <p>Instead of relying solely on human annotations, researchers developed techniques to let language models generate reasoning data themselves. This shift from human annotation to automated generation was critical in scaling up the development of reasoning models.</p>
+
+      <p>One innovative approach, demonstrated by DeepSeek in their R1 model development, was to bootstrap the process using "cold-start" data generation. After creating their initial <strong>DeepSeek-R1-Zero</strong> model through pure reinforcement learning (without supervised fine-tuning), they used this model to generate training examples that contained reasoning traces (<code>&lt;think&gt;...&lt;/think&gt;</code>). This became what they called "cold-start" SFT (supervised fine-tuning) data.</p>
+
+      <p>These machine-generated examples then became the training data for the next iteration of models. By cycling through generation, fine-tuning, and reinforcement learning, they created a virtuous cycle where each generation of models produced better training data for subsequent versions, dramatically scaling up high-quality reasoning datasets without requiring extensive human annotation.</p>
+
+      <h2>The Core Training Approaches</h2>
+
+      <p>With vast quantities of high-quality training data, researchers moved beyond simply prompting models to show their reasoning (as in Chain-of-Thought) and began developing techniques to train models that have explicit reasoning processes.</p>
+
+      <h3>Reinforcement Learning (RL)</h3>
+
+      <p>One of the most significant discoveries highlighted in DeepSeek's research is that reasoning capabilities can emerge through pure reinforcement learning, without requiring supervised fine-tuning first. DeepSeek-R1-Zero demonstrated this approach by skipping the traditional SFT stage and applying RL directly to a pre-trained base model.</p>
+
+      <p>They also used two rewards:</p>
+
+      <ul>
+        <li><strong>Accuracy rewards:</strong> Using deterministic systems to verify coding answers and mathematical responses.</li>
+        <li><strong>Format rewards:</strong> Employing an LLM judge to ensure responses follow expected formats, such as placing reasoning steps inside <code>&lt;think&gt;</code> tags.</li>
+      </ul>
+
+      <h3>Supervised Fine-tuning (SFT)</h3>
+
+      <p>This approach uses labelled datasets to teach models reasoning patterns. The model learns to mimic the step-by-step reasoning processes shown in examples. While effective, this method is limited by the availability and quality of training data. Still, it showed that fine-tuning models with reasoning chains significantly enhances their performance by incorporating step-by-step reasoning processes.</p>
+
+      <h3>Combined SFT and RL Approaches</h3>
+
+      <p>The next step is to combine supervised fine-tuning with reinforcement learning in a multi-stage process. <strong>DeepSeek-R1</strong>, their flagship reasoning model, used this approach:</p>
+
+      <ol>
+        <li>They used DeepSeek-R1-Zero to generate "cold-start" SFT data (training examples from a model that hadn't itself been trained on SFT data).</li>
+        <li>Used this data for instruction fine-tuning.</li>
+        <li>Applied another RL stage with accuracy and format rewards, plus a new consistency reward to prevent language mixing.</li>
+        <li>Conducted another round of SFT data collection, generating 600K Chain-of-Thought examples from the most recent model checkpoint and 200K knowledge-based examples from their base model.</li>
+        <li>Used these examples for another round of instruction fine-tuning.</li>
+        <li>Applied a final RL stage using rule-based rewards for verifiable tasks and human preference labels for other question types.</li>
+      </ol>
+
+      <p>This iterative process of data generation, fine-tuning, and reinforcement learning created a virtuous cycle where each generation of models produced better training data for subsequent versions.</p>
+
+      <figure class="post-figure">
+        <img src="../../images/blog/reasoning_models/reasoning_models3.webp" alt="DeepSeek-R1 multi-stage training pipeline combining SFT and RL" />
+      </figure>
+
+      <h2>Building Apps with Reasoning Models</h2>
+
+      <h3>What Makes a Reasoning Model Different?</h3>
+
+      <p>To know what kind of apps a reasoning model might be good for, it's important to understand what distinguishes reasoning models from traditional language models:</p>
+
+      <ul>
+        <li><strong>Visible thought process:</strong> When solving complex problems, reasoning models generate intermediate steps, providing a window into their "thinking" process rather than just offering answers.</li>
+        <li><strong>Problem decomposition:</strong> They excel at breaking down complex problems into simpler subproblems, often solving them in sequence.</li>
+        <li><strong>Self-verification:</strong> Many reasoning models can verify their own work, checking for errors and inconsistencies before providing a final answer. This capability is enhanced through training with process reward models.</li>
+        <li><strong>Increased accuracy:</strong> On challenging reasoning tasks like mathematics, coding, and puzzles, reasoning models typically outperform traditional language models by considerable margins.</li>
+        <li><strong>Deliberate pacing:</strong> Unlike traditional models that generate quick responses, reasoning models often take more time to "think" before responding, particularly for complex problems.</li>
+      </ul>
+
+      <h3>What Kind of Applications Are Reasoning Models Good For?</h3>
+
+      <p>Despite their impressive capabilities, reasoning models aren't always the right tool for every job. They're good at complex tasks requiring planning and strategy, such as solving puzzles, advanced math problems, and coding tasks. However, they're excessive for simpler tasks like summarisation, translation, or straightforward question answering. In those cases, traditional language models may be faster and more efficient.</p>
+
+      <p>Additionally, reasoning models often come with tradeoffs:</p>
+
+      <ul>
+        <li>Slower response times due to their deliberate reasoning process.</li>
+        <li>More verbose outputs that include intermediate steps, leading to higher costs.</li>
+        <li>If you're deploying these models locally, they come with higher computational costs and token usage.</li>
+        <li>They also often "overthink" simple problems that don't require complex reasoning.</li>
+      </ul>
+
+      <h2>Effectively Prompting Reasoning Models</h2>
+
+      <p>Interacting effectively with reasoning models requires a different approach than traditional language models. Conventional wisdom about prompting doesn't always apply.</p>
+
+      <figure class="post-figure">
+        <img src="../../images/blog/reasoning_models/reasoning_models4.webp" alt="Comparison of effective versus ineffective prompts for reasoning models" />
+      </figure>
+
+      <p>Here are key principles for prompting reasoning models effectively.</p>
+
+      <p><strong>1. Keep prompts simple and direct.</strong> Unlike with traditional models, complex, detailed prompts can actually hinder reasoning models. These models are designed to break down complex problems on their own.</p>
+
+      <p>&#9989; Good: <em>"Solve this system of equations:"</em><br/>
+      &#10060; Bad: <em>"I need you to carefully analyse this system of equations step by step, making sure to show all your work and explain your reasoning at each stage..."</em></p>
+
+      <p><strong>2. Avoid explicit Chain-of-Thought instructions.</strong> Reasoning models are already trained to think step by step. Explicitly asking them to do so is unnecessary and may even reduce performance. Instructing them to "think step by step" may not improve accuracy and can even hinder it.</p>
+
+      <p>&#9989; Good: <em>"What is the area of a circle with radius 5 cm?"</em><br/>
+      &#10060; Bad: <em>"Think step by step to find the area of a circle with radius 5 cm."</em></p>
+
+      <p><strong>3. Focus on the end goal.</strong> Specifying what you want achieves better results than lengthy instructions about how to get there.</p>
+
+      <p>&#9989; Good: <em>"Create a Python function that sorts a list of numbers using the quicksort algorithm."</em><br/>
+      &#10060; Bad: <em>"Write a Python function that implements quicksort. First, explain what quicksort is, then explain the algorithm step by step, then implement it..."</em></p>
+
+      <p><strong>4. Start with zero-shot, then try few-shot if needed.</strong> Reasoning models typically perform well without examples. Only provide examples if the initial results aren't satisfactory.</p>
+
+      <p><strong>5. Provide specific constraints.</strong> Explicit constraints help control output format, length, and style.</p>
+
+      <p>&#9989; Good: <em>"Develop a marketing strategy for a sustainable fashion brand. Limit to 3 key initiatives and include estimated budgets for each."</em></p>
+
+      <p><strong>6. Combine instructions in a single prompt.</strong> Reasoning models generally handle combined instructions better than chained prompts.</p>
+
+      <p>&#9989; Effective: Include all requirements in one comprehensive prompt.<br/>
+      &#10060; Ineffective: Breaking instructions into multiple separate prompts.</p>
+
+      <p><strong>7. For DeepSeek-R1 specifically:</strong></p>
+
+      <ul>
+        <li>Set temperature within 0.5&ndash;0.7 (0.6 recommended) and top-p at 0.95.</li>
+        <li>Avoid system prompts; include all instructions in the user prompt.</li>
+        <li>For reliable evaluation, generate multiple solutions and use majority voting.</li>
+        <li>If the model bypasses its thinking pattern (no <code>&lt;think&gt;</code> tag), explicitly request it to start with the <code>&lt;think&gt;</code> tag.</li>
+      </ul>
+
+      <h2>Compressing Prompts for Enhanced Performance</h2>
+
+      <p>While reasoning models excel at breaking down complex problems on their own, they still benefit from concise, well-structured prompts. As discussed earlier, reasoning models often perform better with simpler, more direct prompts rather than verbose instructions. This is where <strong>prompt compression</strong> becomes crucial:</p>
+
+      <p><strong>Focus on essential information.</strong> Compressed prompts naturally emphasise the core problem statement, helping reasoning models focus on what matters rather than getting distracted by verbose context. They also remove redundant instructions like "think step by step" that reasoning models inherently follow, and balance brevity with clarity so the model has all the information it needs.</p>
+
+      <p><strong>Reduced overthinking.</strong> Reasoning models can sometimes overthink problems when given too much instruction. ScaleDown's compression helps eliminate superfluous guidance that might interfere with the model's native reasoning capabilities.</p>
+
+      <p><strong>Improved performance.</strong> Reasoning models often perform better with cleaner, more direct prompts. By transforming verbose prompts into clear, direct instructions that reasoning models respond to best, you can improve the performance of your application.</p>
+
+      <h3>Implementation Example</h3>
+
+      <p>Integrating ScaleDown's prompt compression with reasoning models is straightforward. You can compress a prompt using the ScaleDown API with a few lines of code, then send the compressed prompt to your reasoning model of choice. The result is a tighter, more focused prompt that lets the model spend its tokens on actual reasoning, not on parsing instruction boilerplate.</p>
+
+      <div class="post-divider">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <!-- Footer nav -->
+    <div class="post-footer">
+      <a href="../" class="post-footer-back">&larr; Back to all posts</a>
+    </div>
+
+  </article>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="contact" class="footer">
+    <div class="footer-inner">
+      <h2>Get in Touch</h2>
+      <p>Interested in collaborating, speaking engagements, or just want to chat about AI? Reach out!</p>
+      <div class="footer-links">
+        <a href="#">LinkedIn</a>
+        <a href="#">Twitter</a>
+        <a href="#">Email</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Archana Vaidheeswaran. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
