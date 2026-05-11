@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF Ingestion Using Graphlit | Archana Vaidheeswaran</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=recoleta@400,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar">
+    <div class="nav-links">
+      <a href="../../index.html#home">Home</a>
+      <a href="../../index.html#experience">Experience</a>
+      <a href="../../speaking/">Speaking</a>
+      <a href="../../courses/">Courses</a>
+      <a href="../" class="active">Blog</a>
+    </div>
+    <a href="../../index.html#contact" class="nav-cta">Get in Touch</a>
+  </nav>
+
+  <!-- ========== BLOG POST ========== -->
+  <article class="blog-post">
+
+    <!-- Hero / Header -->
+    <header class="post-hero">
+      <a href="../" class="post-back">&larr; Back to Blog</a>
+      <span class="post-eyebrow">Product Marketing</span>
+      <h1 class="post-title">PDF Ingestion Using Graphlit</h1>
+      <p class="post-subtitle">How to extract structured, queryable data from PDFs with non-standard layouts, embedded images, and inconsistent text flow, using Graphlit and Azure AI Document Intelligence.</p>
+
+      <div class="post-byline">
+        <div class="post-byline-avatar" style="background-image: url('../../images/profile.avif');"></div>
+        <div class="post-byline-meta">
+          <strong>Archana Vaidheeswaran</strong>
+          <span>9 min read</span>
+        </div>
+        <div class="post-byline-sep"></div>
+        <div class="post-byline-meta">
+          <span>Jun 23, 2024</span>
+        </div>
+      </div>
+
+      <p class="post-original">Originally published on <a href="https://www.graphlit.com/blog/pdf-ingestion-using-graphlit" target="_blank" rel="noopener">Graphlit's Product Blog</a>.</p>
+    </header>
+
+    <!-- Body -->
+    <div class="post-body">
+      <p>Navigating through the complex structure of PDF documents to extract usable data poses a significant challenge due to their non-uniform format and embedded elements like images, plots, and tables. In this article, we'll talk about the challenges of extracting PDF data and how you can use Graphlit to ingest PDF data and use an LLM to unlock interactive question-answering capabilities.</p>
+
+      <h2>Challenges in PDF Data Extraction</h2>
+
+      <p>PDFs are one of the most common document formats used across various industries due to their ability to maintain a consistent layout across different devices. However, the very features that make PDFs so versatile also create significant challenges for data extraction:</p>
+
+      <p><strong>Non-Standard Layouts.</strong> PDFs often contain complex layouts with multicolumn text, sidebars, and mixed content types like text, images, and tables interspersed. This variability can confuse tools that extract plain text, leading to incomplete or inaccurate data retrieval.</p>
+
+      <p><strong>Embedded Content.</strong> Text in PDFs may be embedded as images, especially in scanned documents, making it inaccessible for text extraction tools without optical character recognition (OCR) capabilities.</p>
+
+      <p><strong>Inconsistent Text Flow.</strong> The logical reading order in a PDF might not match the visual presentation. For example, columns on a page might be read left to right when they are intended to be read from top to bottom, which can disrupt data extraction accuracy.</p>
+
+      <p><strong>Font and Encoding Issues.</strong> PDFs allow for embedding custom fonts, which might not be recognized by standard PDF readers or extraction tools, resulting in garbled or missing text during extraction.</p>
+
+      <p><strong>Metadata and Security Features.</strong> PDFs can contain metadata and may be secured with encryption or usage restrictions, complicating data extraction without appropriate permissions or tools.</p>
+
+      <h2>How PDF Data Extraction Works</h2>
+
+      <p>To overcome these challenges, effective PDF data extraction employs a variety of techniques and technologies, typically involving several stages:</p>
+
+      <p><strong>Pre-processing.</strong> Normalization converts all data into a uniform format. For scanned documents, image quality enhancement techniques such as de-skewing, noise reduction, and contrast adjustment are applied to improve OCR results.</p>
+
+      <p><strong>Text Extraction.</strong> OCR is used for scanned PDFs to convert image-based content into selectable and searchable text. For digital PDFs, text recognition parses the text layer to extract readable content, which involves understanding the PDF's internal structure to differentiate between actual text and graphical elements.</p>
+
+      <p><strong>Structural Analysis.</strong> Layout parsing identifies the structural elements of a PDF, such as columns, headers, footers, and paragraphs, which is crucial for maintaining the logical flow of content. Specialized algorithms also detect and reconstruct tables and charts to preserve data integrity and relationships.</p>
+
+      <p><strong>Content Post-processing.</strong> Data cleansing removes any artifacts or errors introduced during OCR or text extraction. Validation ensures the extracted data matches expected formats or schemas, using techniques like pattern recognition or checksums.</p>
+
+      <p><strong>Semantic Enrichment.</strong> Entity recognition identifies and classifies entities such as dates, names, and locations within the text. Tools apply natural language processing to infer context and meaning from the text, enhancing the richness of the extracted data.</p>
+
+      <p><strong>Integration and Output.</strong> The extracted information is structured into a format suitable for further analysis or storage, such as JSON, XML, or directly into a vector database. Data is made accessible to users or downstream applications, often through APIs or direct export options.</p>
+
+      <blockquote>PDF extraction involves multiple steps: document conversion, layout analysis, text extraction, and data parsing. Tackling these steps yourself can be overwhelming and divert your focus from building your core application and serving your users.</blockquote>
+
+      <p>Graphlit simplifies the entire process of PDF ingestion and data extraction by providing an easy API. To get started, all you need is the URL of the PDF you want to ingest and a Graphlit account. With just a few lines of code, you can integrate Graphlit into your application and start processing PDFs effortlessly.</p>
+
+      <h2>Using Graphlit to Ingest PDF Data</h2>
+
+      <p>There are a few ways to ingest PDF data into Graphlit. The easiest way is to use the <code>ingestURI</code> mutation. You can also try this out in the API Explorer. You'll need to specify the URI for the PDF. In the example below, I'm using the arXiv link for the "Attention Is All You Need" paper.</p>
+
+      <p>Once the mutation completes, you can now start a conversation in Graphlit or use the <code>QueryContents</code> mutation to start a chat, and Graphlit will inject relevant context from this PDF into your chat context.</p>
+
+      <p>You can also use Graphlit's Python API to ingest the PDF. To do that, you first need to install the <code>graphlit-client</code> package, then initialize your Graphlit client with your organization ID, environment ID, and JWT secret (all found in your project settings in the Graphlit portal). After that, you can use the <code>ingest_uri</code> method to ingest your PDF.</p>
+
+      <h2>Higher-Quality Extraction with Azure AI Document Intelligence</h2>
+
+      <p>The real power of Graphlit comes from the external connectors it supports. For PDFs, a popular method for higher-quality document extraction is to use Azure AI Document Intelligence. This can smartly ingest the PDF, taking into account the document's layout including titles, paragraphs, and tables. It also recognises common document formats like US tax forms, ID documents, and credit cards.</p>
+
+      <p>You can integrate Azure AI Document Intelligence into your ingestion pipeline using Graphlit workflows. The setup looks like this:</p>
+
+      <p>First, you create a <code>WorkflowInput</code> object that represents the configuration for the workflow. Inside it, specify the name of the workflow as <em>"Azure AI Document Intelligence"</em>, then define the <code>PreparationWorkflowStageInput</code>. Within the preparation stage, specify a list of jobs using <code>PreparationWorkflowJobInput</code>. The job uses a <code>FilePreparationConnectorInput</code> to specify the type of file preparation service to use.</p>
+
+      <p>Set the type to <code>FilePreparationServiceTypes.AZURE_DOCUMENT_INTELLIGENCE</code>. Provide additional properties using <code>AzureDocumentPreparationPropertiesInput</code>. In this example, set the model to <code>AzureDocumentIntelligenceModels.LAYOUT</code>, which means you want to extract the layout information from the documents.</p>
+
+      <p>After configuring the workflow input, call <code>graphlit.client.create_workflow()</code> with the workflow_input as a parameter. This creates the workflow in the Graphlit system. Store the ID of the newly created workflow. Finally, use the <code>ingest_uri</code> method to ingest a document specified by the <code>uri</code> variable, and provide the <code>workflow_id</code> as a reference to the workflow you created earlier.</p>
+
+      <p>By using Graphlit and Azure AI Document Intelligence, you can automate document processing tasks and extract valuable information from your documents efficiently. Graphlit handles all the heavy lifting for you, including document conversion, layout analysis, text extraction, and data parsing. It provides a streamlined and efficient workflow that abstracts away the complexities, allowing you to concentrate on what truly matters: developing your application and delivering value to your users.</p>
+
+      <h2>Summary</h2>
+
+      <p>PDF ingestion is a load-bearing piece of any modern LLM application that touches real-world documents. Graphlit takes a problem that usually requires gluing together multiple tools (OCR, layout parsing, table extraction, vector store integration) and turns it into a single API call, with the option to bring in higher-quality extraction connectors like Azure AI Document Intelligence when you need them.</p>
+
+      <p>For questions on this tutorial or the Graphlit platform, email <a href="mailto:questions@graphlit.com">questions@graphlit.com</a>. For more information, read the <a href="https://docs.graphlit.com" target="_blank" rel="noopener">Graphlit Documentation</a>, visit the <a href="https://www.graphlit.com" target="_blank" rel="noopener">marketing site</a>, or join the Discord community.</p>
+
+      <div class="post-divider">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <!-- Footer nav -->
+    <div class="post-footer">
+      <a href="../" class="post-footer-back">&larr; Back to all posts</a>
+    </div>
+
+  </article>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="contact" class="footer">
+    <div class="footer-inner">
+      <h2>Get in Touch</h2>
+      <p>Interested in collaborating, speaking engagements, or just want to chat about AI? Reach out!</p>
+      <div class="footer-links">
+        <a href="#">LinkedIn</a>
+        <a href="#">Twitter</a>
+        <a href="#">Email</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Archana Vaidheeswaran. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

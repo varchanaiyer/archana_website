@@ -1853,13 +1853,13 @@ a.speaking-testimonial-name:hover {
 .blog-thumb-techbro {
   background-image:
     linear-gradient(135deg, rgba(250, 245, 239, 0.05), rgba(250, 245, 239, 0.2)),
-    url('../images/blog/tech-bros-blobs.svg');
+    url('images/blog/tech-bros-blobs.svg');
   background-size: cover;
   background-position: center;
 }
 
 .blog-thumb-rihanna {
-  background-image: url('../images/blog/spark_thumbnail.png');
+  background-image: url('images/blog/spark_thumbnail.png');
   background-size: cover;
   background-position: center;
 }
@@ -1867,7 +1867,7 @@ a.speaking-testimonial-name:hover {
 .blog-thumb-community {
   background-image:
     linear-gradient(180deg, rgba(250, 245, 239, 0.30), rgba(250, 245, 239, 0.50)),
-    url('../images/blog/communitypandemicblog.avif');
+    url('images/blog/communitypandemicblog.avif');
   background-size: cover;
   background-position: center;
   filter: sepia(0.3) hue-rotate(170deg) saturate(0.85);
@@ -2011,6 +2011,32 @@ a.speaking-testimonial-name:hover {
   background: #c9c4bc;
 }
 
+.post-original {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: #8a847c;
+  margin-top: 1.5rem;
+  font-style: italic;
+}
+
+.post-original a {
+  color: #b8866a;
+  border-bottom: 1px solid rgba(184, 134, 106, 0.4);
+}
+
+.post-original a:hover {
+  border-bottom-color: #b8866a;
+}
+
+.post-body code {
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.92em;
+  background: rgba(31, 28, 24, 0.06);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  color: #1f1c18;
+}
+
 /* --- Featured image (full-bleed) --- */
 .post-featured {
   max-width: 1100px;
@@ -2149,7 +2175,7 @@ a.speaking-testimonial-name:hover {
 .blog-post--techbro .blog-post-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../../images/blog/tech-bros-blobs.svg');
+  background-image: url('images/blog/tech-bros-blobs.svg');
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -2181,7 +2207,7 @@ a.speaking-testimonial-name:hover {
 .blog-post--community .blog-post-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../../images/blog/communitypandemicblog.avif');
+  background-image: url('images/blog/communitypandemicblog.avif');
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -2215,7 +2241,7 @@ a.speaking-testimonial-name:hover {
 .blog-post--rihanna .blog-post-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../../images/blog/rihanna_blog.webp');
+  background-image: url('images/blog/rihanna_blog.webp');
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
