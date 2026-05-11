@@ -73,6 +73,10 @@
 
       <p><strong>Metadata and Security Features.</strong> PDFs can contain metadata and may be secured with encryption or usage restrictions, complicating data extraction without appropriate permissions or tools.</p>
 
+      <figure class="post-figure">
+        <img src="../../images/blog/graphlit/data_ingestion1.webp" alt="Common challenges in extracting data from PDF documents" />
+      </figure>
+
       <h2>How PDF Data Extraction Works</h2>
 
       <p>To overcome these challenges, effective PDF data extraction employs a variety of techniques and technologies, typically involving several stages:</p>
@@ -93,11 +97,19 @@
 
       <p>Graphlit simplifies the entire process of PDF ingestion and data extraction by providing an easy API. To get started, all you need is the URL of the PDF you want to ingest and a Graphlit account. With just a few lines of code, you can integrate Graphlit into your application and start processing PDFs effortlessly.</p>
 
+      <figure class="post-figure">
+        <img src="../../images/blog/graphlit/data_ingestion2.webp" alt="Graphlit ingestion pipeline overview" />
+      </figure>
+
       <h2>Using Graphlit to Ingest PDF Data</h2>
 
       <p>There are a few ways to ingest PDF data into Graphlit. The easiest way is to use the <code>ingestURI</code> mutation. You can also try this out in the API Explorer. You'll need to specify the URI for the PDF. In the example below, I'm using the arXiv link for the "Attention Is All You Need" paper.</p>
 
       <p>Once the mutation completes, you can now start a conversation in Graphlit or use the <code>QueryContents</code> mutation to start a chat, and Graphlit will inject relevant context from this PDF into your chat context.</p>
+
+      <figure class="post-figure">
+        <img src="../../images/blog/graphlit/data_ingestion3.webp" alt="ingestURI mutation example in the Graphlit API" />
+      </figure>
 
       <p>You can also use Graphlit's Python API to ingest the PDF. To do that, you first need to install the <code>graphlit-client</code> package, then initialize your Graphlit client with your organization ID, environment ID, and JWT secret (all found in your project settings in the Graphlit portal). After that, you can use the <code>ingest_uri</code> method to ingest your PDF.</p>
 
@@ -107,6 +119,10 @@
 
       <p>You can integrate Azure AI Document Intelligence into your ingestion pipeline using Graphlit workflows. The setup looks like this:</p>
 
+      <figure class="post-figure">
+        <img src="../../images/blog/graphlit/dataingestion4.webp" alt="Azure AI Document Intelligence workflow setup" />
+      </figure>
+
       <p>First, you create a <code>WorkflowInput</code> object that represents the configuration for the workflow. Inside it, specify the name of the workflow as <em>"Azure AI Document Intelligence"</em>, then define the <code>PreparationWorkflowStageInput</code>. Within the preparation stage, specify a list of jobs using <code>PreparationWorkflowJobInput</code>. The job uses a <code>FilePreparationConnectorInput</code> to specify the type of file preparation service to use.</p>
 
       <p>Set the type to <code>FilePreparationServiceTypes.AZURE_DOCUMENT_INTELLIGENCE</code>. Provide additional properties using <code>AzureDocumentPreparationPropertiesInput</code>. In this example, set the model to <code>AzureDocumentIntelligenceModels.LAYOUT</code>, which means you want to extract the layout information from the documents.</p>
@@ -114,6 +130,10 @@
       <p>After configuring the workflow input, call <code>graphlit.client.create_workflow()</code> with the workflow_input as a parameter. This creates the workflow in the Graphlit system. Store the ID of the newly created workflow. Finally, use the <code>ingest_uri</code> method to ingest a document specified by the <code>uri</code> variable, and provide the <code>workflow_id</code> as a reference to the workflow you created earlier.</p>
 
       <p>By using Graphlit and Azure AI Document Intelligence, you can automate document processing tasks and extract valuable information from your documents efficiently. Graphlit handles all the heavy lifting for you, including document conversion, layout analysis, text extraction, and data parsing. It provides a streamlined and efficient workflow that abstracts away the complexities, allowing you to concentrate on what truly matters: developing your application and delivering value to your users.</p>
+
+      <figure class="post-figure">
+        <img src="../../images/blog/graphlit/dataingestion5.webp" alt="End-to-end Graphlit document processing flow" />
+      </figure>
 
       <h2>Summary</h2>
 
