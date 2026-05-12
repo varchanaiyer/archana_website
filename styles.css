@@ -167,18 +167,18 @@ img {
 }
 
 .hero-text h1 {
-  font-size: 4rem;
-  line-height: 1.1;
-  margin-bottom: 2rem;
+  font-size: 5.2rem;
+  line-height: 1.05;
+  margin-bottom: 2.25rem;
   color: var(--color-dark);
 }
 
 .hero-bio {
-  font-size: 1.18rem;
-  line-height: 1.75;
+  font-size: 1.4rem;
+  line-height: 1.7;
   color: #6a645c;
-  margin-bottom: 1.4rem;
-  max-width: 620px;
+  margin-bottom: 1.6rem;
+  max-width: 680px;
 }
 
 .hero-bio strong {
@@ -2769,11 +2769,11 @@ a.speaking-testimonial-name:hover {
     gap: 2.5rem;
   }
   .hero-text h1 {
-    font-size: 2.8rem;
+    font-size: 3.6rem;
   }
   .hero-bio {
     max-width: 100%;
-    font-size: 1.08rem;
+    font-size: 1.25rem;
   }
   .hero-photo-card {
     width: 260px;
@@ -3016,14 +3016,14 @@ a.speaking-testimonial-name:hover {
     padding: 7rem 1.25rem 3.5rem;
   }
   .hero-text h1 {
-    font-size: 2.4rem;
-    line-height: 1.2;
-    margin-bottom: 1.4rem;
+    font-size: 2.9rem;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
   }
   .hero-bio {
-    font-size: 1.04rem;
+    font-size: 1.18rem;
     line-height: 1.7;
-    margin-bottom: 1.1rem;
+    margin-bottom: 1.2rem;
   }
   .hero-photo-card {
     width: 220px;
@@ -3126,7 +3126,7 @@ a.speaking-testimonial-name:hover {
 /* ------ Very small phones (≤ 420px) ------ */
 @media (max-width: 420px) {
   .hero-text h1 {
-    font-size: 2.1rem;
+    font-size: 2.5rem;
   }
   .hero-photo-card {
     width: 200px;
