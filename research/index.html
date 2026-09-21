@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research · Archana Vaidheeswaran</title>
+  <meta name="description" content="Archana Vaidheeswaran researches how to check AI systems: evaluating AI judges, consistent reasoning, and pluralism in multi-agent systems. Program Director at Algoverse, founder of PRISM, and WiML board member 2023–2026." />
+  <link rel="canonical" href="https://varchana.com/research/" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Archana Vaidheeswaran · Research" />
+  <meta property="og:description" content="AI evaluation and safety research, grouped by theme." />
+  <meta property="og:url" content="https://varchana.com/research/" />
+  <meta property="og:image" content="https://varchana.com/images/profile-research.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <style>
+    :root{
+      color-scheme: light dark;
+      --ground:#F6F7F5; --ink:#1A1E1C; --ink-2:#4D5551; --muted:#6B7470; --rule:#DCE1DD;
+      --accent:#2D6653; --accent-soft:#E3EEE9; --tag:#EEF1EF;
+      --serif:"Newsreader",Georgia,"Times New Roman",serif;
+      --sans:"Source Sans 3","Segoe UI",system-ui,-apple-system,sans-serif;
+      --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --ground:#111513; --ink:#E5EAE7; --ink-2:#B3BCB7; --muted:#8C958F; --rule:#2A312D;
+        --accent:#86C9B1; --accent-soft:#1D2B25; --tag:#1C221F;
+      }
+    }
+
+    *{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%}
+    body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;padding-inline:20px;padding-block:0 4rem}
+    img{max-width:100%}
+    @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+    .page{max-width:46rem;margin-inline:auto}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline;text-underline-offset:3px}
+    a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+    p{margin:0}
+    strong{font-weight:600}
+
+    .topbar{display:flex;justify-content:space-between;gap:1rem;padding-block:1.2rem 0;font-size:.92rem}
+    .topbar a{color:var(--ink-2)}
+    .topbar a:hover{color:var(--accent)}
+
+    /* header */
+    .intro{display:grid;grid-template-columns:1fr 10rem;gap:2.2rem;align-items:start;padding-block:2.4rem 2rem}
+    h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.1rem,5.5vw,2.8rem);line-height:1.05;letter-spacing:-.01em;margin:0 0 .35rem}
+    .role{color:var(--ink-2);font-size:1.02rem;margin-bottom:1.3rem}
+    .bio{display:flex;flex-direction:column;gap:.9rem;max-width:62ch}
+    .photo{width:10rem;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:4px;display:block}
+    .links{display:flex;flex-wrap:wrap;gap:.35rem 1.1rem;margin-top:1.4rem;font-size:.98rem}
+    @media (max-width:620px){
+      .intro{grid-template-columns:1fr;gap:1.2rem;padding-block:1.6rem 1.5rem}
+      .photo{width:7.5rem;order:-1}
+    }
+
+    /* sections */
+    section{padding-top:2.6rem;display:flex;flex-direction:column;gap:1rem;scroll-margin-top:1rem}
+    h2{font-family:var(--serif);font-weight:600;font-size:1.55rem;line-height:1.15;margin:0;text-wrap:balance}
+    .label{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+    /* theme index */
+    .themes{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:.6rem}
+    .themes a{display:flex;justify-content:space-between;align-items:baseline;gap:.8rem;padding:.7rem .9rem;background:var(--accent-soft);border-radius:4px;color:var(--ink);font-weight:600;line-height:1.3}
+    .themes a:hover{text-decoration:none;outline:1px solid var(--accent)}
+    .themes .n{font-family:var(--mono);font-weight:400;font-size:.8rem;color:var(--muted);white-space:nowrap}
+
+    /* news */
+    .news{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.5rem}
+    .news li{display:grid;grid-template-columns:5.6rem 1fr;gap:1rem}
+    .news .when{font-family:var(--mono);font-size:.82rem;color:var(--muted);padding-top:.18rem;font-variant-numeric:tabular-nums}
+    @media (max-width:480px){.news li{grid-template-columns:1fr;gap:0}}
+
+    /* banners */
+    .banner{border-top:1px solid var(--rule);padding-top:2.2rem;margin-top:.6rem}
+    .banner-head{display:flex;flex-direction:column;gap:.3rem}
+    .question{color:var(--ink-2);font-style:italic;max-width:60ch}
+    .papers{list-style:none;margin:.4rem 0 0;padding:0;display:flex;flex-direction:column;gap:1.6rem}
+    .paper{display:grid;grid-template-columns:7.8rem 1fr;gap:1.2rem}
+    .venue{display:flex;flex-direction:column;gap:.1rem;padding-top:.2rem}
+    .venue .conf{font-family:var(--mono);font-weight:500;font-size:.84rem;color:var(--ink)}
+    .venue .track{font-family:var(--mono);font-size:.74rem;color:var(--muted);line-height:1.35}
+    .p-body{display:flex;flex-direction:column;gap:.3rem;min-width:0}
+    .p-title{font-weight:600;line-height:1.35;font-size:1.02rem}
+    .p-title a{color:var(--ink)}
+    .p-title a:hover{color:var(--accent)}
+    .authors{font-size:.9rem;color:var(--muted)}
+    .authors strong{color:var(--ink-2)}
+    .summary{font-size:.96rem;color:var(--ink-2);max-width:62ch}
+    .p-links{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem .9rem;font-size:.88rem}
+    .tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;background:var(--tag);color:var(--ink-2);padding:.18rem .45rem;border-radius:3px}
+    @media (max-width:560px){
+      .paper{grid-template-columns:1fr;gap:.35rem}
+      .venue{flex-direction:row;flex-wrap:wrap;gap:.1rem .6rem;padding-top:0}
+    }
+
+    /* plain list */
+    .plain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.55rem;max-width:64ch}
+    .plain li{padding-left:1rem;position:relative}
+    .plain li::before{content:"";position:absolute;left:0;top:.72em;width:.35rem;height:1px;background:var(--muted)}
+
+    footer{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:.86rem;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1rem}
+    footer a{color:var(--muted)}
+  </style>
+</head>
+<body>
+<div class="page">
+
+<nav class="topbar" aria-label="Site">
+  <a href="/">← varchana.com</a>
+  <a href="/papers/">All papers</a>
+</nav>
+
+<header class="intro">
+  <div>
+    <h1>Archana Vaidheeswaran</h1>
+    <div class="role">AI evaluation and safety research · Program Director, Algoverse</div>
+    <div class="bio">
+      <p>I study how to check AI systems. My papers ask whether a model's reasoning holds together, and whether a model used as a judge actually checks what it is asked to check.</p>
+      <p>I write most of my papers with the early-career researchers I mentor. I am Program Director at <a href="https://algoverseairesearch.org/ai-safety-fellowship" target="_blank" rel="noopener">Algoverse</a>, an AI safety research fellowship, and I started <a href="https://prism-research.org/" target="_blank" rel="noopener">PRISM</a>, a peer-vetted research fellowship. From 2017 to 2022 I worked in industry as an AI research engineer and data scientist.</p>
+      <p>I served on the board of <a href="https://wiml.org/" target="_blank" rel="noopener">Women in Machine Learning</a> (WiML) from 2023 to 2026. Before that I organised the WiML Un-Workshop at ICML 2021 as Virtual Experience Chair.</p>
+      <p>I have an M.Sc. in Computer Engineering by research from the National University of Singapore.</p>
+    </div>
+    <nav class="links" aria-label="Profiles">
+      <a href="mailto:varchanaiyer139@gmail.com">Email</a>
+      <a href="https://scholar.google.com/citations?user=FdRRFnkAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="https://openreview.net/profile?id=~Archana_Vaidheeswaran2" target="_blank" rel="noopener">OpenReview</a>
+      <a href="https://github.com/varchanaiyer" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/archana-iyer/" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+  </div>
+  <img class="photo" src="../images/profile-research.jpg" width="319" height="480" alt="Archana Vaidheeswaran, smiling, in a red floral dress against a yellow wall">
+</header>
+
+<section id="themes" aria-labelledby="themes-h">
+  <div class="label" id="themes-h">Research themes</div>
+  <ul class="themes">
+    <li><a href="#judges">Evaluating AI judges <span class="n">3 papers</span></a></li>
+    <li><a href="#reasoning">Consistent reasoning <span class="n">3 papers</span></a></li>
+    <li><a href="#pluralism">Pluralism and many agents <span class="n">3 papers</span></a></li>
+    <li><a href="#benchmarks">Benchmarks from real use <span class="n">2 papers</span></a></li>
+    <li><a href="#training">Research training <span class="n">3 programmes</span></a></li>
+  </ul>
+</section>
+
+<section id="news" aria-labelledby="news-h">
+  <div class="label" id="news-h">Recent</div>
+  <ul class="news">
+    <li><span class="when">EMNLP '26</span><span>CAST, on settling contradictions in clinical LLMs, accepted to the Industry Track.</span></li>
+    <li><span class="when">KDD '26</span><span>A negative result on logical consistency at the SeT-LLM workshop.</span></li>
+    <li><span class="when">ICML '26</span><span>Three workshop papers, one as first author.</span></li>
+    <li><span class="when">ICLR '26</span><span>Cross-lingual fairness drift in moral reasoning at the CAO workshop.</span></li>
+    <li><span class="when">EACL '26</span><span>FluffInjector at the Student Research Workshop.</span></li>
+    <li><span class="when">AAAI '26</span><span>Panellist, Industry Roundtable, AI Governance Workshop, Singapore.</span></li>
+  </ul>
+</section>
+
+<section id="judges" class="banner" aria-labelledby="judges-h">
+  <div class="banner-head">
+    <h2 id="judges-h">Evaluating AI judges</h2>
+    <p class="question">When a model is used to judge, verify or explain, does it check what it is asked to check?</p>
+  </div>
+  <ul class="papers">
+    <li class="paper">
+      <div class="venue"><span class="conf">ICML 2026</span><span class="track">FAGEN workshop</span></div>
+      <div class="p-body">
+        <div class="p-title"><a href="https://openreview.net/forum?id=YHX4DxG94e" target="_blank" rel="noopener">Triggers and Diagnostics for LLM-Based Interpretability Failures in Active Inference Agents</a></div>
+        <div class="authors"><strong>Archana Vaidheeswaran</strong>, Param Raval, Rohit Shenoy</div>
+        <p class="summary">An audit of an LLM that explains an autonomous agent's decisions on German energy grid data. None of 30 explanations flagged an injected 600 MW false reading. All three models justified wrong actions 80–95% of the time.</p>
+        <div class="p-links"><span class="tag">First author</span><a href="https://openreview.net/forum?id=YHX4DxG94e" target="_blank" rel="noopener">OpenReview</a></div>
+      </div>
+    </li>
+    <li class="paper">
+      <div class="venue"><span class="conf">EACL 2026</span><span class="track">Student Research Workshop</span></div>
+      <div class="p-body">
+        <div class="p-title"><a href="https://openreview.net/forum?id=lpNn4wRzoK" target="_blank" rel="noopener">FluffInjector: Diagnosing Logical Consistency Failures in Chain-of-Thought Reward Models</a></div>
+        <div class="authors">Author list on OpenReview</div>
+        <p class="summary">A benchmark where 25–40% of reasoning steps are swapped for plausible filler. Frontier judges accept these chains far too often. SmartRM, the verifier we trained on it, cuts false positives from 37.4% to 2.7%.</p>
+        <div class="p-links"><span class="tag">41.6% acceptance</span><a href="https://openreview.net/forum?id=lpNn4wRzoK" target="_blank" rel="noopener">OpenReview</a></div>
+      </div>
+    </li>
+    <li class="paper">
+      <div class="venue"><span class="conf">WACV 2026</span><span class="track">VALED workshop</span></div>
+      <div class="p-body">
+        <div class="p-title"><a href="https://openreview.net/forum?id=kyZ7zyWFvX" target="_blank" rel="noopener">Quantifying Text Dominance in Multimodal AI</a></div>
+        <div class="authors">Author list on OpenReview</div>
+        <p class="summary">Vision-language models proposed for copyright disputes follow the prompt over the image. Primed with a legal accusation, they rate unrelated images as similar. We measure this with a Blindness Index.</p>
+        <div class="p-links"><a href="https://openreview.net/forum?id=kyZ7zyWFvX" target="_blank" rel="noopener">OpenReview</a></div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<section id="reasoning" class="banner" aria-labelledby="reasoning-h">
+  <div class="banner-head">
+    <h2 id="reasoning-h">Consistent reasoning</h2>
+    <p class="question">Does a model's reasoning hold together across repeated samples, negations and hidden steps?</p>
+  </div>
+  <ul class="papers">
+    <li class="paper">
+      <div class="venue"><span class="conf">EMNLP 2026</span><span class="track">Industry Track</span></div>
+      <div class="p-body">
+        <div class="p-title">CAST: Contrastive Adjudication via Selective Triggering for Clinical LLMs</div>
+        <div class="authors">Krishna Senthilkumar, <strong>Archana Vaidheeswaran</strong>, Shivank Garg</div>
+        <p class="summary">When a clinical LLM gives different answers to the same question, CAST puts the competing arguments side by side and asks the model to settle them. On PubMedQA with GPT-4o-mini, accuracy on those questions rises from 28.0% to 57.0%.</p>
+        <div class="p-links"><span class="tag">Poster</span><span class="authors">Paper link to come</span></div>
+      </div>
+    </li>
+    <li class="paper">
+      <div class="venue"><span class="conf">ICML 2026</span><span class="track">FoGen workshop</span></div>
+      <div class="p-body">
+        <div class="p-title"><a href="https://arxiv.org/abs/2607.09698" target="_blank" rel="noopener">Interpreting Latent CoT Reasoning as Dynamical Systems</a></div>
+        <div class="authors">Shreya Sanjay Boyane, Sabari Iyyappan Duraipandian, Manju Nagesh, Jerome Francis, <strong>Archana Vaidheeswaran</strong>, Kevin Zhu</div>
+        <p class="summary">We treat hidden reasoning tokens as a path through representation space. CODI settles like a stable attractor. COCONUT expands like an unstable system.</p>
+        <div class="p-links"><a href="https://openreview.net/forum?id=ZAGsOMAwBV" target="_blank" rel="noopener">OpenReview</a><a href="https://arxiv.org/abs/2607.09698" target="_blank" rel="noopener">arXiv</a></div>
+      </div>
+    </li>
+    <li class="paper">
+      <div class="venue"><span class="conf">KDD 2026</span><span class="track">SeT-LLM workshop</span></div>
+      <div class="p-body">
+        <div class="p-title"><a href="https://openreview.net/forum?id=gUuGmzkxBP" target="_blank" rel="noopener">Mutual Information Transfer Regularization for Logical Consistency: A Controlled Empirical Study</a></div>
+        <div class="authors">Author list on OpenReview</div>
+        <p class="summary">We tested whether a layer-level regulariser stops QA models giving the same answer to a question and its negation. Across three backbones and five seeds the gains were small and unstable. Training directly on negated examples works better.</p>
+        <div class="p-links"><span class="tag">Negative result</span><span class="tag">Poster</span><a href="https://openreview.net/forum?id=gUuGmzkxBP" target="_blank" rel="noopener">OpenReview</a></div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<section id="pluralism" class="banner" aria-labelledby="pluralism-h">
+  <div class="banner-head">
+    <h2 id="pluralism-h">Pluralism and many agents</h2>
+    <p class="question">What does alignment do to the range of views a model holds, across languages and across populations of agents?</p>
+  </div>
+  <ul class="papers">
+    <li class="paper">
+      <div class="venue"><span class="conf">ICML 2026</span><span class="track">Forecasting workshop</span></div>
+      <div class="p-body">
+        <div class="p-title"><a href="https://arxiv.org/abs/2606.26583" target="_blank" rel="noopener">Preference Optimization Drives Monoculture in LLM Prediction Markets</a></div>
+        <div class="authors">James Begin, Brendan Gho, Suman Muppavarapu, Tyson Tsay, Atharva Mohan, Afnan Shaik, Ruizhe Li, Vasu Sharma, <strong>Archana Vaidheeswaran</strong></div>
+        <p class="summary">Prediction markets work when traders think independently. Preference-optimised LLM traders drift toward a shared prior, and the market prices confidently and wrongly.</p>
+        <div class="p-links"><a href="https://openreview.net/forum?id=Qaxb5pqRkj" target="_blank" rel="noopener">OpenReview</a><a href="https://arxiv.org/abs/2606.26583" target="_blank" rel="noopener">arXiv</a></div>
+      </div>
+    </li>
+    <li class="paper">
+      <div class="venue"><span class="conf">ICLR 2026</span><span class="track">CAO workshop</span></div>
+      <div class="p-body">
+        <div class="p-title"><a href="https://openreview.net/forum?id=TReuRWFTyK" target="_blank" rel="noopener">Cross-Lingual Fairness Drift in LLM Moral Reasoning</a></div>
+        <div class="authors">Author list on OpenReview</div>
+        <p class="summary">Five models, 50 moral dilemmas and four languages: English, Spanish, Korean and Mandarin. Consequentialist bias grows outside English, and cultural grounding drops by up to 88%.</p>
+        <div class="p-links"><a href="https://openreview.net/forum?id=TReuRWFTyK" target="_blank" rel="noopener">OpenReview</a></div>
+      </div>
+    </li>
+    <li class="paper">
+      <div class="venue"><span class="conf">2025</span><span class="track">Preprint</span></div>
+      <div class="p-body">
+        <div class="p-title"><a href="https://arxiv.org/abs/2511.17621" target="_blank" rel="noopener">From Competition to Coordination: Market Making as a Scalable Framework for Safe and Aligned Multi-Agent LLM Systems</a></div>
+        <div class="authors">Brendan Gho, Suman Muppavarapu, Afnan Shaik, Tyson Tsay, James Begin, Kevin Zhu, <strong>Archana Vaidheeswaran</strong>, Vasu Sharma</div>
+        <p class="summary">A market maker as a coordination mechanism that keeps a population of LLM agents calibrated as it grows.</p>
+        <div class="p-links"><a href="https://arxiv.org/abs/2511.17621" target="_blank" rel="noopener">arXiv</a></div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<section id="benchmarks" class="banner" aria-labelledby="benchmarks-h">
+  <div class="banner-head">
+    <h2 id="benchmarks-h">Benchmarks from real use</h2>
+    <p class="question">Does the evaluation data look like what people actually ask?</p>
+  </div>
+  <ul class="papers">
+    <li class="paper">
+      <div class="venue"><span class="conf">2026</span><span class="track">Preprint</span></div>
+      <div class="p-body">
+        <div class="p-title"><a href="https://arxiv.org/abs/2602.23367" target="_blank" rel="noopener">HumanMCP: A Human-Like Query Dataset for Evaluating MCP Tool Retrieval Performance</a></div>
+        <div class="authors">Shubh Laddha, Lucas Changbencharoen, Win Kuptivej, Surya Shringla, <strong>Archana Vaidheeswaran</strong>, Yash Bhaskar</div>
+        <p class="summary">A dataset of realistic, messy queries for testing whether agents pick the right Model Context Protocol tool.</p>
+        <div class="p-links"><a href="https://arxiv.org/abs/2602.23367" target="_blank" rel="noopener">arXiv</a></div>
+      </div>
+    </li>
+    <li class="paper">
+      <div class="venue"><span class="conf">ACL 2019</span><span class="track">BioNLP workshop</span></div>
+      <div class="p-body">
+        <div class="p-title"><a href="https://aclanthology.org/W19-5055/" target="_blank" rel="noopener">Saama Research at MEDIQA 2019: Pre-trained BioBERT with Attention Visualisation for Medical Natural Language Inference</a></div>
+        <div class="authors">Kamal Raj Kanakarajan, Suriyadeepan Ramamoorthy, <strong>Vaidheeswaran Archana</strong>, Soham Chatterjee, Malaikannan Sankarasubbu</div>
+        <p class="summary">BioBERT for medical natural language inference, with attention visualisation so clinicians can see which evidence drove each prediction. 83.45% on MedNLI.</p>
+        <div class="p-links"><a href="https://aclanthology.org/W19-5055/" target="_blank" rel="noopener">ACL Anthology</a></div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<section id="training" class="banner" aria-labelledby="training-h">
+  <div class="banner-head">
+    <h2 id="training-h">Research training</h2>
+    <p class="question">How do research programmes find people and help them finish a first paper?</p>
+  </div>
+  <ul class="papers">
+    <li class="paper">
+      <div class="venue"><span class="conf">PRISM</span><span class="track">Started 2025</span></div>
+      <div class="p-body">
+        <div class="p-title"><a href="https://prism-research.org/blog/peer-selection-to-leverage-mentorship" target="_blank" rel="noopener">Peer Selection to Leverage Mentorship: The Reasoning Behind PRISM</a></div>
+        <p class="summary">A 16-week AI safety research fellowship I started. Fellows review each other's plans, so mentor time goes to four decision points. The 2026 cohort drew 795 applications and has 48 fellows in 12 research groups.</p>
+        <div class="p-links"><a href="https://prism-research.org/" target="_blank" rel="noopener">prism-research.org</a></div>
+      </div>
+    </li>
+    <li class="paper">
+      <div class="venue"><span class="conf">SOAR 2026</span><span class="track">EleutherAI</span></div>
+      <div class="p-body">
+        <div class="p-title">A selection rubric that checks claims before scoring them</div>
+        <p class="summary">I wrote it for EleutherAI's Summer of Open AI Research after the first version favoured polished writing. Each claim in an application is checked before it is scored.</p>
+        <div class="p-links"><a href="https://www.eleuther.ai/soar" target="_blank" rel="noopener">SOAR</a></div>
+      </div>
+    </li>
+    <li class="paper">
+      <div class="venue"><span class="conf">Algoverse</span><span class="track">Since 2025</span></div>
+      <div class="p-body">
+        <div class="p-title">Running research cohorts at scale</div>
+        <p class="summary">I direct Algoverse's AI safety research fellowship, funded by Open Philanthropy. I run selection and paper review for its early-career research teams.</p>
+        <div class="p-links"><a href="https://algoverseairesearch.org/ai-safety-fellowship" target="_blank" rel="noopener">Algoverse AI Safety Fellowship</a></div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<section id="teaching" class="banner" aria-labelledby="teaching-h">
+  <h2 id="teaching-h">Teaching and service</h2>
+  <ul class="plain">
+    <li>Instructor on four LinkedIn Learning courses and Udacity's Intel Edge AI for IoT Developers Nanodegree, with 40,000+ learners.</li>
+    <li>Board Director, Women in Machine Learning (WiML), 2023–2026.</li>
+    <li>Virtual Experience Chair, <a href="https://wiml.org/wiml-un-workshop-2021" target="_blank" rel="noopener">WiML Un-Workshop at ICML 2021</a>.</li>
+    <li>Panellist, Industry Roundtable, AI Governance Workshop at AAAI-26.</li>
+    <li>Author of the Humans of AI Safety interview series, 2024.</li>
+    <li>Side project: <a href="https://github.com/varchanaiyer/ai-safety-museum" target="_blank" rel="noopener">The Museum of AI Safety</a>, a browser museum with 35 exhibits.</li>
+  </ul>
+</section>
+
+<footer>
+  <span>© 2026 Archana Vaidheeswaran</span>
+  <a href="/">Back to varchana.com</a>
+</footer>
+
+</div>
+</body>
+</html>
